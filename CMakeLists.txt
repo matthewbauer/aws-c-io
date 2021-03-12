@@ -127,7 +127,7 @@ elseif (APPLE)
     endif ()
 
     #No choice on TLS for apple, darwinssl will always be used.
-    set(PLATFORM_LIBS ${SECURITY_LIB})
+    list(APPEND PLATFORM_LIBS "-framework Security")
     set(TLS_STACK_DETERMINED ON)
 
     set(EVENT_LOOP_DEFINE "KQUEUE")
